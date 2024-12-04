@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css'
 })
-export class DatabindingComponent {
+export class DataBindingComponent {
 
   //string, number, boolean, data
 
