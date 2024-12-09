@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';  
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular_18_learn';
+  @HostListener('window:scroll')
+  onScroll() {
+    console.log("Scrolling")
+  }
+  @HostListener('contextmenu')
+  orRightClick(event: any) {
+   // event.preventDefault();
+  }
+
 }

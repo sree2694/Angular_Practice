@@ -7,38 +7,62 @@ import { AttributeDirectiveComponent } from './components/directive/attribute-di
 import { IfelseComponent } from './components/controlFlow/ifelse/ifelse.component';
 import { ForComponent } from './components/controlFlow/for/for.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { TemplateComponent } from './components/forms/template/template.component';
+import { ReactiveComponent } from './components/forms/reactive/reactive.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
-    {
-        path:'add-emp',
-        component: AddEmployeeComponent
-    },
-    {
-        path:'data-binding',
-        component: DataBindingComponent
-    },
-    {
-        path:'emp-list',
-        component: EmployeeListComponent
-    },
-    {
-        path:'structural-dir',
-        component: StructuralDirComponent
-    },
-    {
-        path:'attributedirective',
-        component: AttributeDirectiveComponent
-    },
-    {
-        path:'if-else',
-        component: IfelseComponent
-    },
-    {
-        path:'for',
-        component: ForComponent
-    },
-    {
-        path:'pipe',
-        component: PipeComponent
-    },
+  //default route
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'add-emp',
+        component: AddEmployeeComponent,
+      },
+      {
+        path: 'data-binding',
+        component: DataBindingComponent,
+      },
+      {
+        path: 'emp-list',
+        component: EmployeeListComponent,
+      },
+      {
+        path: 'structural-dir',
+        component: StructuralDirComponent,
+      },
+      {
+        path: 'attributedirective',
+        component: AttributeDirectiveComponent,
+      },
+      {
+        path: 'if-else',
+        component: IfelseComponent,
+      },
+      {
+        path: 'for',
+        component: ForComponent,
+      },
+      {
+        path: 'pipe',
+        component: PipeComponent,
+      },
+      {
+        path: 'template-form',
+        component: TemplateComponent,
+      },
+      {
+        path: 'reactive-form',
+        component: ReactiveComponent,
+      },
+    ],
+  },
 ];
