@@ -53,22 +53,11 @@ export class PostAPIComponent implements OnInit {
     
   }
 
-  onSave() {
-    debugger;
-    this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment", this.deptObj).subscribe((res:any)=>{
-      debugger;
-      if(res.result) {
-        alert("Department Created Success");
-        this.getDepartment();
-      } else {
-        alert(res.message)
-      }
-    })
-  }
-
   // onSave() {
-  //   this.deptSrv.saveNewDept(this.deptObj).subscribe((res: any) => {
-  //     if (res.result) {
+  //   debugger;
+  //   this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment", this.deptObj).subscribe((res:any)=>{
+  //     debugger;
+  //     if(res.result) {
   //       alert("Department Created Success");
   //       this.getDepartment();
   //     } else {
@@ -76,6 +65,17 @@ export class PostAPIComponent implements OnInit {
   //     }
   //   })
   // }
+
+  onSave() {
+    this.deptSrv.saveNewDept(this.deptObj).subscribe((res: any) => {
+      if (res.result) {
+        alert("Department Created Success");
+        this.getDepartment();
+      } else {
+        alert(res.message)
+      }
+    })
+  }
   onUpdate() {
     this.http.post("https://projectapi.gerasim.in/api/Complaint/UpdateDepartment", this.deptObj).subscribe((res:any)=>{
       debugger;
@@ -88,18 +88,18 @@ export class PostAPIComponent implements OnInit {
     })
   }
 
-  getDepartment() {
-    this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment").subscribe((res:any)=>{
-      this.deptList = res.data;
-    })
-  }
-
   // getDepartment() {
-  //   debugger;
-  //   this.deptSrv.getAllDept().subscribe((res:any)=>{
-  //     debugger;
+  //   this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment").subscribe((res:any)=>{
   //     this.deptList = res.data;
   //   })
   // }
+
+  getDepartment() {
+    debugger;
+    this.deptSrv.getAllDept().subscribe((res:any)=>{
+      debugger;
+      this.deptList = res.data;
+    })
+  }
 
 }

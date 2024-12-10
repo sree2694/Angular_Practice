@@ -10,7 +10,7 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { TemplateComponent } from './components/forms/template/template.component';
 import { ReactiveComponent } from './components/forms/reactive/reactive.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { GetApiComponent } from './components/apiIntegration/get-api/get-api.component';
+import { GetAPIComponent } from './components/apiIntegration/get-api/get-api.component';
 import { PostAPIComponent } from './components/apiIntegration/post-api/post-api.component';
 
 export const routes: Routes = [
@@ -67,7 +67,7 @@ export const routes: Routes = [
       },
       {
         path: 'get-api',
-        component: GetApiComponent
+        component: GetAPIComponent
     },
     {
         path: 'post-api',

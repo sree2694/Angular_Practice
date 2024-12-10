@@ -1,1 +1,4 @@
-<p>alert works!</p>
+<div class="alert" [ngClass]="{'alert-success':alertType =='Success', 
+'alert-warning':alertType =='Warning', 'alert-danger':alertType =='Error' }">
+    <strong>{{alertType}}!</strong> {{message}}
+  </div>

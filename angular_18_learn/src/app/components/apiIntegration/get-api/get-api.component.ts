@@ -1,20 +1,29 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AlertComponent } from '../../../resuableComponent/alert/alert.component';
+import { Customer } from '../../../model/class/Customer';
+import { IUser } from '../../../model/interface/IUser';
 
 @Component({
   selector: 'app-get-api',
-  imports: [],
+  standalone: true,
+  imports: [AlertComponent],
   templateUrl: './get-api.component.html',
   styleUrl: './get-api.component.css'
 })
-export class GetApiComponent {
+export class GetAPIComponent {
 
-  userList: any [] = [];
-  customerList: any [] = [];
+  userList: IUser [] = [];
+  customerList: Customer [] = [];
+  alertMsg : string = ''
 
   constructor(private http: HttpClient) {
     this.getAllUser();
   } 
+
+  changeMSg() {
+    this.alertMsg = 'THHJJHJ'
+  }
 
   getAllUser() {
     debugger;
@@ -33,4 +42,7 @@ export class GetApiComponent {
       debugger;
     })
   }
+
+
+
 }
