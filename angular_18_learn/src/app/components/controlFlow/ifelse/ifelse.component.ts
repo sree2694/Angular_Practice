@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DepartmentService } from '../../../service/department.service';
 
 @Component({
   selector: 'app-ifelse',
@@ -16,6 +17,14 @@ export class IfelseComponent {
   num2: string = '';
   selectedStatus: string = '';
 
+  constructor(private deptService: DepartmentService) {
+    this.deptService.onRoleChange$.subscribe((res:string)=>{
+      debugger;
+    })
+    this.deptService.role$.subscribe((res:string)=>{
+      debugger;
+    })
+  }
 
   showDiv1() { 
     this.div1Visiable = true;
