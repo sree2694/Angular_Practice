@@ -17,6 +17,7 @@ import { NgtemplateComponent } from './components/directive/ngtemplate/ngtemplat
 import { NgcontainerComponent } from './components/directive/ngcontainer/ngcontainer.component';
 import { ViewchildComponent } from './components/decorators/viewchild/viewchild.component';
 import { LoginComponent } from './components/login/login.component';
+import { authGuard } from './service/auth.guard';
 
 export const routes: Routes = [
   //default route
@@ -40,6 +41,7 @@ export const routes: Routes = [
       {
         path: 'data-binding',
         component: DataBindingComponent,
+        canActivate:[authGuard]
       },
       {
         path: 'emp-list',
