@@ -16,6 +16,7 @@ import { LifecycleEventComponent } from './components/lifecycle-event/lifecycle-
 import { NgtemplateComponent } from './components/directive/ngtemplate/ngtemplate.component';
 import { NgcontainerComponent } from './components/directive/ngcontainer/ngcontainer.component';
 import { ViewchildComponent } from './components/decorators/viewchild/viewchild.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
   //default route
@@ -24,7 +25,10 @@ export const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: '',
     component: LayoutComponent,
@@ -87,12 +91,12 @@ export const routes: Routes = [
       },
       {
         path: 'ng-container',
-        component: NgcontainerComponent
-    },
-    {
+        component: NgcontainerComponent,
+      },
+      {
         path: 'viewChild',
-        component: ViewchildComponent
-    }
+        component: ViewchildComponent,
+      },
     ],
   },
 ];
