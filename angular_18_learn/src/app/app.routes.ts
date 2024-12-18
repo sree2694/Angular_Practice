@@ -18,6 +18,7 @@ import { NgcontainerComponent } from './components/directive/ngcontainer/ngconta
 import { ViewchildComponent } from './components/decorators/viewchild/viewchild.component';
 import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './service/auth.guard';
+import { SignalComponent } from './components/signal/signal.component';
 
 export const routes: Routes = [
   //default route
@@ -38,6 +39,10 @@ export const routes: Routes = [
         path: 'add-emp',
         component: AddEmployeeComponent,
       },
+      {
+        path:'signal',
+        component: SignalComponent
+    },
       {
         path: 'data-binding',
         component: DataBindingComponent,
