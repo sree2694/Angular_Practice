@@ -1,4 +1,3 @@
-import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +9,7 @@ import { Department, IDepartmentList } from '../../../model/class/Customer';
 @Component({
   selector: 'app-post-api',
   standalone: true,
-  imports: [FormsModule,JsonPipe,AlertComponent,MyButtonComponent],
+  imports: [FormsModule,AlertComponent,MyButtonComponent],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
